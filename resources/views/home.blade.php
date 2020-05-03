@@ -17,6 +17,9 @@
                     You are logged in!
                 </div>
             </div>
+
+            <!-- Insert Component -->
+            <example-component />
         </div>
     </div>
 </div>
