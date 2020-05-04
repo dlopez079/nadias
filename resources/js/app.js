@@ -21,7 +21,7 @@ window.Vue = require("vue");
 
 Vue.component(
     "category-manager",
-    require("./components/category-manager.vue").default
+    require("./components/CategoryManager.vue").default
 );
 
 /**
