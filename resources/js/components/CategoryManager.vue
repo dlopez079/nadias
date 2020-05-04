@@ -8,9 +8,11 @@
 
 <script>
 export default {
-    props: ["categories"]
+    props: ["initialCategories"],
+    data() {
+        return { categories: _.cloneDeep(this.initialCategories) };
+    }
 };
 </script>
 
 <style lang="scss" scoped></style>
-g it
