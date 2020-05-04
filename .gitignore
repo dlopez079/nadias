@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/Ex_Files_Laravel_VueJS_WebApps
 .env
 .env.backup
 .phpunit.result.cache
