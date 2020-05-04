@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', ' - Creating memories, one experience at a time')
+
 @section('content')
 <h4 class="intro">Creating memories, one experience at a time</h4>               
             <p>
