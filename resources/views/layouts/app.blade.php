@@ -22,42 +22,43 @@
     <link rel="icon" href="/images/favicon.ico">    
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', "Nadia's Garden Restaurant") }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+    
+    <div id="app"class="container">
+        <div class="top-bar">
+            <div>Call us at (123) 456-7891</div>
+            <div><a href="#">get driving directions</a></div>
+        </div>            
+        <header>
+            <a href="/"><img src="/images/logo.png"></a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="separator"></li>
+                    <li><a href="#">About</a></li>
+                    <li class="separator"></li>
+                    <li><a href="/menu">Menu</a></li>
+                    <li class="separator"></li>
+                    <li><a href="#">Reservations</a></li>
+                    <li class="separator"></li>
+                    <li><a href="#">Location &amp; Hours</a></li>
+                    <li class="separator"></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="separator"></li>
+                    <!-- Authentication Links -->
+                    @guest
+                            <li>
+                                <a href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
+                            <li class="separator"></li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li >
+                                    <a href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                            <li>
+                                
+                                    <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -66,17 +67,71 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                               
                             </li>
                         @endguest
-                    </ul>
+                </ul>
+            </nav>
+        </header>  
+        <main class="page-content">
+            <h4 class="intro">Creating memories, one experience at a time</h4>               
+            <p>
+                Nadia’s Garden Restaurant isn’t just about dining. We’re about creating memorable experiences that our guest will cherish! 
+                Our family friendly restaurant has indoor, outdoor, and intimate dining options for any occasion. 
+                Our outdoor garden area is perfect for a stroll before or after your meal. We invite you to come dine with us!
+            </p>
+            <img src="/images/patio.jpg" class="home">
+            <div class="menu-categories">
+                <article>
+                    <a href="#"><img src="/images/mushrooms.jpg"></a>
+                    <h2><a href="#">Starters</a></h2>
+                </article>                
+                <article>
+                    <a href="#"><img src="/images/salad.jpg"></a>
+                    <h2><a href="#">Salads</a></h2>
+                </article>                
+                <article>
+                    <a href="#"><img src="/images/burger.jpg"></a>
+                    <h2><a href="#">Entrees</a></h2>
+                </article>                
+                <article>
+                    <a href="#"><img src="/images/brownie.jpg"></a>
+                    <h2><a href="#">Desserts</a></h2>
+                </article>                
+            </div>
+            <div class="social">
+                <div>
+                    <h4>What our customers say</h4>
+                    <p>
+                        This place has, without a doubt, some of the best pizza I have ever had! 
+                        The owners are hands on and made sure we had everything we needed.
+                        They are an eclectic eatery, with a large variety of meals to choose from, 
+                        but everything I’ve tried from their menu has been great. 
+                        It’s definitely a place you have to give a few tries to get a feel for everything they have to offer. 
+                        Oh, and their crème brulee is amazing!<br>
+                        <br>
+                        Shad Cayden
+                    </p>
+                </div>    
+                <div class="networks">
+                    <a href="#"><img src="/images/twitter.png"></a>
+                    <a href="#"><img src="/images/fb.png"></a>
+                    <a href="#"><img src="/images/ig.png"></a>    
                 </div>
             </div>
-        </nav>
+        </main>    
+        <footer>
+            NADIA’S GARDEN RESTAURANT IS A FICTITIOUS BRAND CREATED BY LYNDA.COM SOLELY FOR THE PURPOSE OF TRAINING.
+            ALL PRODUCTS AND PEOPLE ASSOCIATED WITH NADIA’S GARDEN RESTAURANT ARE ALSO FICTITIOUS.
+            ANY RESEMBLANCE TO REAL BRANDS, PRODUCTS, OR PEOPLE IS PURELY COINCIDENTAL. 
+            INFORMATION PROVIDED ABOUT THE PRODUCT IS ALSO FICTITIOUS AND SHOULD NOT BE CONSTRUED TO BE REPRESENTATIVE 
+            OF ACTUAL PRODUCTS ON THE MARKET IN A SIMILAR PRODUCT CATEGORY.
+        </footer>   
+    </div>          
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
+    
 </body>
 </html>
