@@ -18,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
+
+/*
+ /Added a route for admin.categories.index.blade.php
+*/
+Route::get('/categories', 'CategoryController@index');
