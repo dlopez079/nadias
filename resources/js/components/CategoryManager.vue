@@ -1,5 +1,6 @@
 <template>
     <form>
+        <a @click="addCategory" class="add">+ Add Category</a>
         <div v-for="(category, index) in categories" :key="category.id">
             <input type="text" v-model="category.name" />
             <input type="number" v-model="category.display_order" />
