@@ -18,19 +18,22 @@ class CategoryPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        //If the user is an admin, return true for the following functions/methods.
+        if ($user->is_admin) {
+            return true;
+        }
     }
 
     /**
-     * Determine whether the user can view the model.
+     * Determine whether the user can manage categories.
      *
      * @param  \App\User  $user
-     * @param  \App\Category  $category
      * @return mixed
      */
-    public function view(User $user, Category $category)
+    public function manage(User $user)
     {
-        //
+        //return the user as admin.  This works for just this function/method
+        return $user->is_admin;
     }
 
     /**
