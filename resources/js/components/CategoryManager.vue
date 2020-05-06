@@ -41,6 +41,9 @@ export default {
                 image: "",
                 display_order: this.categories.length + 1
             });
+            this.$nextTick(() => {
+                window.scrollTo(0, document.body.scrollHeight);
+            });
         }
     }
 };

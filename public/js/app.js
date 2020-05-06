@@ -1951,6 +1951,9 @@ __webpack_require__.r(__webpack_exports__);
         image: "",
         display_order: this.categories.length + 1
       });
+      this.$nextTick(function () {
+        window.scrollTo(0, document.body.scrollHeight);
+      });
     }
   }
 });
