@@ -32,8 +32,6 @@ class CategoryPolicy
      */
     public function manage(User $user)
     {
-        //return the user as admin.  This works for just this function/method
-        return $user->is_admin;
     }
 
     /**
