@@ -1945,6 +1945,8 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     addCategory: function addCategory() {
+      var _this = this;
+
       this.categories.push({
         id: 0,
         name: "",
@@ -1953,6 +1955,8 @@ __webpack_require__.r(__webpack_exports__);
       });
       this.$nextTick(function () {
         window.scrollTo(0, document.body.scrollHeight);
+
+        _this.$refs[""][0].focus();
       });
     }
   }
@@ -38267,6 +38271,8 @@ var render = function() {
                 expression: "category.name"
               }
             ],
+            ref: category.name,
+            refInFor: true,
             attrs: { type: "text" },
             domProps: { value: category.name },
             on: {

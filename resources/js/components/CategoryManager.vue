@@ -2,7 +2,7 @@
     <form>
         <a @click="addCategory" class="add">+ Add Category</a>
         <div v-for="(category, index) in categories" :key="category.id">
-            <input type="text" v-model="category.name" />
+            <input type="text" v-model="category.name" :ref="category.name" />
             <input type="number" v-model="category.display_order" />
             <a @click="removeCategory(index)" class="remove">Delete</a>
 
@@ -43,6 +43,7 @@ export default {
             });
             this.$nextTick(() => {
                 window.scrollTo(0, document.body.scrollHeight);
+                this.$refs[""][0].focus();
             });
         }
     }
