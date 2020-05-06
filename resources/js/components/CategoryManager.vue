@@ -8,6 +8,7 @@
 
             <div>
                 <img
+                    v-if="category.image"
                     :src="`/images/${category.image}`"
                     width="100"
                     alt="Image"

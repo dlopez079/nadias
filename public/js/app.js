@@ -1929,6 +1929,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["initialCategories"],
   data: function data() {
@@ -38309,13 +38310,15 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", [
-            _c("img", {
-              attrs: {
-                src: "/images/" + category.image,
-                width: "100",
-                alt: "Image"
-              }
-            }),
+            category.image
+              ? _c("img", {
+                  attrs: {
+                    src: "/images/" + category.image,
+                    width: "100",
+                    alt: "Image"
+                  }
+                })
+              : _vm._e(),
             _vm._v(" "),
             _c("input", {
               directives: [
