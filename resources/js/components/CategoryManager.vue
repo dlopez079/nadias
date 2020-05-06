@@ -13,6 +13,7 @@
                     width="100"
                     alt="Image"
                 />
+                <label v-else>Image: </label>
                 <input type="text" v-model="category.image" />
             </div>
             <hr />

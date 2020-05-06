@@ -1930,6 +1930,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["initialCategories"],
   data: function data() {
@@ -38318,7 +38319,7 @@ var render = function() {
                     alt: "Image"
                   }
                 })
-              : _vm._e(),
+              : _c("label", [_vm._v("Image: ")]),
             _vm._v(" "),
             _c("input", {
               directives: [
