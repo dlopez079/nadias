@@ -16,7 +16,7 @@ class CategoryPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function viewAny(User $user)
+    public function before($user, $ability)
     {
         //If the user is an admin, return true for the following functions/methods.
         if ($user->is_admin) {
@@ -32,6 +32,10 @@ class CategoryPolicy
      */
     public function manage(User $user)
     {
+        //
+        // if ($user->is_admin) {
+        //     return true;
+        // }
     }
 
     /**
