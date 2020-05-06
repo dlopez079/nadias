@@ -30,6 +30,15 @@ export default {
             if (confirm("Are you sure?")) {
                 this.categories.splice(index, 1);
             }
+        },
+
+        addCategory() {
+            this.categories.push({
+                id: 0,
+                name: "",
+                image: "",
+                display_order: this.categories.length + 1
+            });
         }
     }
 };
