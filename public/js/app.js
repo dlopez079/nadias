@@ -38334,19 +38334,17 @@ var render = function() {
               directives: [
                 {
                   name: "model",
-                  rawName: "v-model",
+                  rawName: "v-model.lazy",
                   value: category.image,
-                  expression: "category.image"
+                  expression: "category.image",
+                  modifiers: { lazy: true }
                 }
               ],
               attrs: { type: "text" },
               domProps: { value: category.image },
               on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(category, "image", $event.target.value)
+                change: function($event) {
+                  return _vm.$set(category, "image", $event.target.value)
                 }
               }
             })

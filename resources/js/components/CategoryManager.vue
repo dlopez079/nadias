@@ -14,7 +14,7 @@
                     alt="Image"
                 />
                 <label v-else>Image: </label>
-                <input type="text" v-model="category.image" />
+                <input type="text" v-model.lazy="category.image" />
             </div>
             <hr />
         </div>
