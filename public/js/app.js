@@ -1938,6 +1938,9 @@ __webpack_require__.r(__webpack_exports__);
       categories: _.cloneDeep(this.initialCategories)
     };
   },
+  created: function created() {
+    axios.post("/api/categories/upsert");
+  },
   methods: {
     removeCategory: function removeCategory(index) {
       if (confirm("Are you sure?")) {
