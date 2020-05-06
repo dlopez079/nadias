@@ -1929,6 +1929,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["initialCategories"],
   data: function data() {
@@ -1941,6 +1943,21 @@ __webpack_require__.r(__webpack_exports__);
       if (confirm("Are you sure?")) {
         this.categories.splice(index, 1);
       }
+    },
+    addCategory: function addCategory() {
+      var _this = this;
+
+      this.categories.push({
+        id: 0,
+        name: "",
+        image: "",
+        display_order: this.categories.length + 1
+      });
+      this.$nextTick(function () {
+        window.scrollTo(0, document.body.scrollHeight);
+
+        _this.$refs[""][0].focus();
+      });
     }
   }
 });
@@ -38254,6 +38271,8 @@ var render = function() {
                 expression: "category.name"
               }
             ],
+            ref: category.name,
+            refInFor: true,
             attrs: { type: "text" },
             domProps: { value: category.name },
             on: {
@@ -38301,31 +38320,31 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", [
-            _c("img", {
-              attrs: {
-                src: "/images/" + category.image,
-                width: "100",
-                alt: "Image"
-              }
-            }),
+            category.image
+              ? _c("img", {
+                  attrs: {
+                    src: "/images/" + category.image,
+                    width: "100",
+                    alt: "Image"
+                  }
+                })
+              : _c("label", [_vm._v("Image: ")]),
             _vm._v(" "),
             _c("input", {
               directives: [
                 {
                   name: "model",
-                  rawName: "v-model",
+                  rawName: "v-model.lazy",
                   value: category.image,
-                  expression: "category.image"
+                  expression: "category.image",
+                  modifiers: { lazy: true }
                 }
               ],
               attrs: { type: "text" },
               domProps: { value: category.image },
               on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(category, "image", $event.target.value)
+                change: function($event) {
+                  return _vm.$set(category, "image", $event.target.value)
                 }
               }
             })
